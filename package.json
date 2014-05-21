@@ -12,6 +12,10 @@
   "scripts": {
     "test": "echo \"No test, yet.\" && exit 0"
   },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/wwwtyro/node-ovrsdk"
+  },  
   "author": "Rye Terrell",
   "license": "Unlicense"
 }
