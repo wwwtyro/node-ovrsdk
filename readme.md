@@ -31,3 +31,35 @@ setInterval(function() {
     console.log(printf("%5f %5f %5f %5f", pose.x, pose.y, pose.z, pose.w));
 }, 10);
 ```
+
+Console output (I'm using MinGW/msys here):
+
+```
+$ node main.js
+OVR::DeviceManager - initialized.
+OVR::DeviceManagerThread - running (ThreadId=0x22C0).
+*** SensorFusion Startup: TimeSeconds = 0.000000
+OVR::Win32::HIDDevice - Opened '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+                    Manufacturer:'Oculus VR, Inc.'  Product:'Tracker DK'  Serial#:'8D85478C4855'  Version:'18'
+OVR::SensorDevice - Closed '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+OVR::Win32::HIDDevice - Closed '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+OVR::Win32::HIDDevice - Opened '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+                    Manufacturer:'Oculus VR, Inc.'  Product:'Tracker DK'  Serial#:'8D85478C4855'  Version:'18'
+OVR::SensorDevice - Closed '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+OVR::Win32::HIDDevice - Closed '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+OVR::Win32::HIDDevice - Opened '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+                    Manufacturer:'Oculus VR, Inc.'  Product:'Tracker DK'  Serial#:'8D85478C4855'  Version:'18'
+OVR::SensorDevice - Closed '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+OVR::Win32::HIDDevice - Closed '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+OVR::Win32::HIDDevice - Opened '\\?\hid#vid_2833&pid_0001#7&39ea44fd&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}'
+                    Manufacturer:'Oculus VR, Inc.'  Product:'Tracker DK'  Serial#:'8D85478C4855'  Version:'18'
+Sensor created.
+0.124330 0.000007 0.023191 0.991970
+0.124329 0.000009 0.023193 0.991970
+0.124326 0.000004 0.023201 0.991970
+0.124325 -0.000001 0.023195 0.991970
+0.124327 -0.000007 0.023197 0.991970
+0.124336 -0.000004 0.023206 0.991969
+0.124333 -0.000001 0.023207 0.991969
+0.124328 0.000006 0.023213 0.991970
+```
