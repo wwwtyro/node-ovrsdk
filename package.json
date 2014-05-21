@@ -1,7 +1,7 @@
 {
   "name": "node-ovrsdk",
   "version": "0.0.0",
-  "description": "node-ffi wrapper for the Oculus VR SDK",
+  "description": "Node FFI wrapper for the 0.3.1 Oculus VR SDK C API",
   "main": "ovrsdk.js",
   "dependencies": {
     "ffi": "1.2.6",
