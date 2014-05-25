@@ -1,7 +1,7 @@
 
-### Node FFI wrapper for the 0.3.1 Oculus VR SDK C API  
+### Node FFI wrapper for the 0.3.2 Oculus VR SDK C API  
 
-This wrapper includes a compiled Windows DLL (others will be released when the SDK supports them), so no need to compile it (unless you want to, that's fine too).
+This wrapper includes a compiled Windows DLL and Linux .so (OSX will be added when I get a dev machine), so no need to compile it (unless you want to, that's fine too).
 
 Not all functionality is yet included. Please see the source for more details.
 
@@ -32,7 +32,7 @@ setInterval(function() {
 }, 10);
 ```
 
-Console output (I'm using MinGW/msys here):
+Console output:
 
 ```
 $ node main.js
