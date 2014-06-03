@@ -9,16 +9,19 @@ var voidPtr = ref.refType(ref.types.void);
 var ovrHmd = voidPtr;
 var ovrBool = ref.types.char;
 
-exports.ovrHmdCap_Present = ovrHmdCap_Present =                     0x0001;
-exports.ovrHmdCap_Available = ovrHmdCap_Available =                 0x0002;
-exports.ovrHmdCap_Orientation = ovrHmdCap_Orientation =             0x0010;
-exports.ovrHmdCap_YawCorrection = ovrHmdCap_YawCorrection =         0x0020;
-exports.ovrHmdCap_Position = ovrHmdCap_Position =                   0x0040;
-exports.ovrHmdCap_LowPersistence = ovrHmdCap_LowPersistence =       0x0080;
-exports.ovrHmdCap_LatencyTest = ovrHmdCap_LatencyTest =             0x0100;
+exports.ovrHmdCap_Present = ovrHmdCap_Present = 0x0001;
+exports.ovrHmdCap_Available = ovrHmdCap_Available = 0x0002;
+exports.ovrHmdCap_LowPersistence = ovrHmdCap_LowPersistence = 0x0080;
+exports.ovrHmdCap_LatencyTest = ovrHmdCap_LatencyTest = 0x0100;
 exports.ovrHmdCap_DynamicPrediction = ovrHmdCap_DynamicPrediction = 0x0200;
-exports.ovrHmdCap_NoVSync = ovrHmdCap_NoVSync =                     0x1000;
-exports.ovrHmdCapBits = ovrHmdCapBits =                             ref.types.uint32;
+exports.ovrHmdCap_NoVSync = ovrHmdCap_NoVSync = 0x1000;
+exports.ovrHmdCap_NoRestore = ovrHmdCap_NoRestore = 0x4000;
+exports.ovrHmdCaps = ovrHmdCaps = ref.types.uint32;
+
+exports.ovrSensorCap_Orientation = ovrSensorCap_Orientation = 0x0010;
+exports.ovrSensorCap_YawCorrection = ovrSensorCap_YawCorrection = 0x0020;
+exports.ovrSensorCap_Position = ovrSensorCap_Position = 0x0040;
+exports.ovrSensorCaps = ovrSensorCaps = ref.types.uint32;
 
 ovrEye_Left = 0;
 ovrEye_Right = 1;
@@ -123,14 +126,3 @@ exports.ovrHmd_GetDesc = libovr.ovrHmd_GetDesc;
 exports.ovrHmd_StartSensor = libovr.ovrHmd_StartSensor;
 exports.ovrHmd_GetSensorState = libovr.ovrHmd_GetSensorState;
 exports.ovrHmd_ResetSensor = libovr.ovrHmd_ResetSensor;
-
-
-
-
-
-
-
-
-
-
-

@@ -26,7 +26,7 @@ console.log("DistortionCaps".blue.bold, desc.DistortionCaps)
 console.log("DisplayId".blue.bold, desc.DisplayId)
 
 console.log("Starting sensor...".cyan.bold);
-libovr.ovrHmd_StartSensor(hmd, ovrHmdCap_Orientation, ovrHmdCap_Orientation);
+libovr.ovrHmd_StartSensor(hmd, ovrSensorCap_Orientation, ovrSensorCap_Orientation);
 
 console.log("Acquiring pose...".cyan.bold);
 var ss = libovr.ovrHmd_GetSensorState(hmd, libovr.ovr_GetTimeInSeconds());
