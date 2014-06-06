@@ -16,14 +16,22 @@ var hmd = libovr.ovrHmd_Create(0);
 console.log("Creating desc object...".cyan.bold);
 var desc = new libovr.ovrHmdDesc;
 
-console.log("Getting desc...".cyan.bold);
+console.log("Getting ovrHmdDesc...".cyan.bold);
 libovr.ovrHmd_GetDesc(hmd, desc.ref());
-console.log("Type".blue.bold, desc.Type)
-console.log("ProductName".blue.bold, desc.ProductName)
-console.log("Manufacturer".blue.bold, desc.Manufacturer)
-console.log("Caps".blue.bold, desc.Caps)
-console.log("DistortionCaps".blue.bold, desc.DistortionCaps)
-console.log("DisplayId".blue.bold, desc.DisplayId)
+console.log("Type".blue.bold, desc.Type);
+console.log("ProductName".blue.bold, desc.ProductName);
+console.log("Manufacturer".blue.bold, desc.Manufacturer);
+console.log("Caps".blue.bold, desc.Caps);
+console.log("DistortionCaps".blue.bold, desc.DistortionCaps);
+console.log("DisplayId".blue.bold, desc.DisplayId);
+
+console.log("Getting ovrEyeRenderDesc for left eye...".cyan.bold);
+var lerd = libovr.ovrHmd_GetRenderDesc(hmd, libovr.ovrEye_Left, desc.DefaultEyeFov[0]);
+console.log("View Adjust, left eye x-component".blue.bold, lerd.ViewAdjust.x);
+
+console.log("Getting ovrEyeRenderDesc for right eye...".cyan.bold);
+var rerd = libovr.ovrHmd_GetRenderDesc(hmd, libovr.ovrEye_Right, desc.DefaultEyeFov[0]);
+console.log("View Adjust, right eye x-component".blue.bold, rerd.ViewAdjust.x);
 
 console.log("Starting sensor...".cyan.bold);
 libovr.ovrHmd_StartSensor(hmd, ovrSensorCap_Orientation, ovrSensorCap_Orientation);

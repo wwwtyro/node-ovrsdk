@@ -23,10 +23,10 @@ exports.ovrSensorCap_YawCorrection = ovrSensorCap_YawCorrection = 0x0020;
 exports.ovrSensorCap_Position = ovrSensorCap_Position = 0x0040;
 exports.ovrSensorCaps = ovrSensorCaps = ref.types.uint32;
 
-ovrEye_Left = 0;
-ovrEye_Right = 1;
-ovrEye_Count = 2;
-ovrEyeType = ref.types.uint32;
+exports.ovrEye_Left = ovrEye_Left = 0;
+exports.ovrEye_Right = ovrEye_Right = 1;
+exports.ovrEye_count = ovrEye_Count = 2;
+exports.ovrEyeType = ovrEyeType = ref.types.uint32;
 
 var ovrVector2i = Struct({
     'x': ref.types.int,
@@ -105,6 +105,27 @@ var ovrSensorState = Struct({
 });
 exports.ovrSensorState = ovrSensorState;
 
+var ovrRecti = Struct({
+    Pos: ovrVector2i,
+    Size: ovrSizei
+});
+exports.ovrRecti = ovrRecti;
+
+var ovrVector2f = Struct({
+    x: ref.types.float,
+    y: ref.types.float
+});
+exports.ovrVector2f = ovrVector2f;
+
+var ovrEyeRenderDesc = Struct({
+    Eye: ovrEyeType,
+    Fov: ovrFovPort,
+    DistortedViewport: ovrRecti,
+    PixelsPerTanAngleAtCenter: ovrVector2f,
+    ViewAdjust: ovrVector3f
+});
+exports.ovrEyeRenderDesc = ovrEyeRenderDesc;
+
 var libovr = ffi.Library(path.resolve(__dirname, 'libovr'), {
     ovr_Initialize: [ovrBool, []],
     ovr_Shutdown: [ref.types.void, []],
@@ -115,6 +136,7 @@ var libovr = ffi.Library(path.resolve(__dirname, 'libovr'), {
     ovrHmd_StartSensor: [ovrBool, [ovrHmd, ref.types.uint32, ref.types.uint32]],
     ovrHmd_GetSensorState: [ovrSensorState, [ovrHmd, ref.types.double]],
     ovrHmd_ResetSensor: [ref.types.void, [ovrHmd]],
+    ovrHmd_GetRenderDesc: [ovrEyeRenderDesc, [ovrHmd, ovrEyeType, ovrFovPort]],
 });
 
 exports.ovr_Initialize = libovr.ovr_Initialize;
@@ -126,3 +148,4 @@ exports.ovrHmd_GetDesc = libovr.ovrHmd_GetDesc;
 exports.ovrHmd_StartSensor = libovr.ovrHmd_StartSensor;
 exports.ovrHmd_GetSensorState = libovr.ovrHmd_GetSensorState;
 exports.ovrHmd_ResetSensor = libovr.ovrHmd_ResetSensor;
+exports.ovrHmd_GetRenderDesc = libovr.ovrHmd_GetRenderDesc;
