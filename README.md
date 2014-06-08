@@ -23,7 +23,7 @@ libovr.ovr_Initialize();
 var hmd = libovr.ovrHmd_Create(0);
 var desc = new libovr.ovrHmdDesc;
 libovr.ovrHmd_GetDesc(hmd, desc.ref());
-libovr.ovrHmd_StartSensor(hmd, ovrHmdCap_Orientation, ovrHmdCap_Orientation);
+libovr.ovrHmd_StartSensor(hmd, ovrSensorCap_Orientation, ovrSensorCap_Orientation);
 
 setInterval(function() {
     var ss = libovr.ovrHmd_GetSensorState(hmd, libovr.ovr_GetTimeInSeconds());
